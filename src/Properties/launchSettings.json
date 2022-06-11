@@ -1,0 +1,27 @@
+{
+  "profiles": {
+    "WinVerCollector": {
+      "commandName": "Project"
+    },
+    "Help": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
+    },
+    "Version": {
+      "commandName": "Project",
+      "commandLineArgs": "--version"
+    },
+    "Output": {
+      "commandName": "Project",
+      "commandLineArgs": "-o"
+    },
+    "Clean": {
+      "commandName": "Project",
+      "commandLineArgs": "-c"
+    },
+    "Silent": {
+      "commandName": "Project",
+      "commandLineArgs": "-s"
+    }
+  }
+}
