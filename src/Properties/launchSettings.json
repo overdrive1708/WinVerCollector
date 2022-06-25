@@ -19,9 +19,9 @@
       "commandName": "Project",
       "commandLineArgs": "-c"
     },
-    "Silent": {
+    "Quiet": {
       "commandName": "Project",
-      "commandLineArgs": "-s"
+      "commandLineArgs": "-q"
     }
   }
 }

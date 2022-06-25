@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
  - The output user name was changed from UserName to UserDomainName+UserName.
+ - Changed the name of the silent mode option from "-s" to "-q".
 
 ## [1.0.0] - 2022-06-12
 

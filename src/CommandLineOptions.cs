@@ -10,7 +10,7 @@
         public bool IsCleanRequest { get => _isCleanRequest; set => _isCleanRequest = value; }
         private bool _isCleanRequest = false;
 
-        [CommandLine.Option('s', "silent", Required = false, HelpText = "Silent mode.")]
+        [CommandLine.Option('q', "quiet", Required = false, HelpText = "Do not display processing results.")]
         public bool IsSilentRequest { get => _isSilentRequest; set => _isSilentRequest = value; }
         private bool _isSilentRequest = false;
     }
