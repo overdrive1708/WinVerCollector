@@ -11,6 +11,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 CreateDatabase();
             }
 
@@ -37,6 +38,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 return;
             }
 
@@ -67,6 +69,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 return;
             }
 
@@ -95,6 +98,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 return;
             }
 
@@ -123,6 +127,8 @@ namespace WinVerCollector
                     command.ExecuteNonQuery();
                 }
                 connection.Close();
+
+                Display.WriteLine("Create database file.");
             }
         }
     }

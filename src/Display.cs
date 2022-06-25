@@ -15,6 +15,16 @@ namespace WinVerCollector
             }
         }
 
+        internal static void WriteErrorLine(string line)
+        {
+            if (!IsSilentRequest)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Error.WriteLine(line);
+                Console.ResetColor();
+            }
+        }
+
         internal static void PauseReadKey()
         {
             if (!IsSilentRequest)
