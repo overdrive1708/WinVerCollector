@@ -12,7 +12,7 @@ namespace WinVerCollector
 
         public static string GetHostName() => Dns.GetHostName();
 
-        public static string GetUserName() => Environment.UserName;
+        public static string GetUserName() => @$"{Environment.UserDomainName}\{Environment.UserName}";
 
         public static string? GetProductName() => Registry.GetValue(_keyName, _valueNameOsProductName, "")?.ToString();
 
