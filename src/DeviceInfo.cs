@@ -50,15 +50,5 @@ namespace WinVerCollector
 
             return version;
         }
-
-        public static void Show()
-        {
-            Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine($"HostName:{GetHostName()}");
-            Console.WriteLine($"ProductName:{GetProductName()}");
-            Console.WriteLine($"Version:{GetVersion()}");
-            Console.WriteLine($"UserName:{GetUserName()}");
-            Console.WriteLine("--------------------------------------------------");
-        }
     }
 }
