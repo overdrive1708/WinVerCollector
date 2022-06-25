@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+ - Display collected version info function.
+
 ### Changed
  - The output user name was changed from UserName to UserDomainName+UserName.
  - Changed the name of the silent mode option from "-s" to "-q".
