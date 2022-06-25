@@ -19,7 +19,6 @@ namespace WinVerCollector
 
             if (opts.IsOutputRequest)
             {
-                
                 Display.WriteLine("Now outputting...");
                 Database.Output();
                 Display.WriteLine("Completed.");
