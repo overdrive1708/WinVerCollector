@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+ - The output user name was changed from UserName to UserDomainName+UserName.
+
 ## [1.0.0] - 2022-06-12
 
 ### Added
