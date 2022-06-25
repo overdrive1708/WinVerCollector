@@ -22,6 +22,10 @@
     "Quiet": {
       "commandName": "Project",
       "commandLineArgs": "-q"
+    },
+    "Show": {
+      "commandName": "Project",
+      "commandLineArgs": "-s"
     }
   }
 }

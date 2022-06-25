@@ -63,6 +63,34 @@ namespace WinVerCollector
             }
         }
 
+        public static void Show()
+        {
+            if (!File.Exists(_databaseFileName))
+            {
+                return;
+            }
+
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source = {_databaseFileName}"))
+            {
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT * FROM DeviceInfo";
+                    using (var executeReader = command.ExecuteReader())
+                    {
+                        Console.WriteLine("----------------------------------------------------------------------------------------------------");
+                        Console.WriteLine("\"HostName\",\"ProductName\",\"Version\",\"UserName\",\"LastUpdate\"");
+                        while (executeReader.Read())
+                        {
+                            Console.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\"", executeReader["HostName"], executeReader["ProductName"], executeReader["Version"], executeReader["UserName"], executeReader["LastUpdate"]));
+                        }
+                        Console.WriteLine("----------------------------------------------------------------------------------------------------");
+                    }
+                }
+                connection.Close();
+            }
+        }
+
         public static void Clean()
         {
             if (!File.Exists(_databaseFileName))

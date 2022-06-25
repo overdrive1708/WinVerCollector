@@ -27,6 +27,13 @@ namespace WinVerCollector
                 ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");
                 ConsoleReadKey(opts.IsSilentRequest);
             }
+            else if (opts.IsShowRequest)
+            {
+                ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
+                Database.Show();
+                ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");
+                ConsoleReadKey(opts.IsSilentRequest);
+            }
             else if (opts.IsCleanRequest)
             {
                 ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
