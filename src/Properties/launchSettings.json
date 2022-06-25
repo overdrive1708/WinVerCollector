@@ -26,6 +26,10 @@
     "Show": {
       "commandName": "Project",
       "commandLineArgs": "-s"
+    },
+    "Verbose": {
+      "commandName": "Project",
+      "commandLineArgs": "-v"
     }
   }
 }

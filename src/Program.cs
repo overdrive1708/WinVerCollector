@@ -48,6 +48,10 @@ namespace WinVerCollector
                 ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
                 ConsoleWriteLine(opts.IsSilentRequest, "Now collecting...");
                 Database.Collect();
+                if (opts.IsVerboseRequest)
+                {
+                    DeviceInfo.Show();
+                }
                 ConsoleWriteLine(opts.IsSilentRequest, "Completed.");
                 ConsoleWriteLine(opts.IsSilentRequest, "Thank you for cooperation.");
                 ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");

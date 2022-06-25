@@ -5,14 +5,16 @@ Collect windows version.
 ## Usage
 ```
 WinVerCollector.exe [options]
-options:[-coqs] [--output] [--show] [--clean] [--quiet] [--help] [--version]
-  -o, --output    Output collected version info.
+options:[-coqsv] [--output] [--show] [--clean] [--quiet] [--verbose] [--help] [--version]
+  -o, --output    Output collected windows version info.
 
-  -s, --show      Display collected version info.
+  -s, --show      Display collected windows version info.
 
   -c, --clean     Clean database.
 
   -q, --quiet     Do not display processing results.
+
+  -v, --verbose   Display windows version info.
 
   --help          Display this help screen.
 
