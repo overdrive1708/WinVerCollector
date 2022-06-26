@@ -1,5 +1,4 @@
 ﻿using CommandLine;
-using System.Reflection;
 
 namespace WinVerCollector
 {
@@ -14,72 +13,45 @@ namespace WinVerCollector
 
         private static void HandleParseSuccess(CommandLineOptions opts)
         {
-            Assembly assm = Assembly.GetExecutingAssembly();
-            string? product = assm?.GetCustomAttribute<AssemblyProductAttribute>()?.Product;
-            string? version = assm?.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            Display.IsSilentRequest = opts.IsSilentRequest;
+
+            Display.ShowWelcomeMessage();
 
             if (opts.IsOutputRequest)
             {
-                ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
-                ConsoleWriteLine(opts.IsSilentRequest, "Now outputting...");
+                Display.WriteLine("Now outputting...");
                 Database.Output();
-                ConsoleWriteLine(opts.IsSilentRequest, "Completed.");
-                ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");
-                ConsoleReadKey(opts.IsSilentRequest);
+                Display.WriteLine("Completed.");
             }
             else if (opts.IsShowRequest)
             {
-                ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
+                Display.WriteLine("Now outputting...");
                 Database.Show();
-                ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");
-                ConsoleReadKey(opts.IsSilentRequest);
+                Display.WriteLine("Completed.");
             }
             else if (opts.IsCleanRequest)
             {
-                ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
-                ConsoleWriteLine(opts.IsSilentRequest, "Now cleaning...");
+                Display.WriteLine("Now cleaning...");
                 Database.Clean();
-                ConsoleWriteLine(opts.IsSilentRequest, "Completed.");
-                ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");
-                ConsoleReadKey(opts.IsSilentRequest);
+                Display.WriteLine("Completed.");
             }
             else
             {
-                ConsoleWriteLine(opts.IsSilentRequest, $"Welcome to {product} Ver.{version} !!");
-                ConsoleWriteLine(opts.IsSilentRequest, "Now collecting...");
+                Display.WriteLine("Now collecting...");
                 Database.Collect();
                 if (opts.IsVerboseRequest)
                 {
-                    DeviceInfo.Show();
+                    Display.ShowDeviceInfo();
                 }
-                ConsoleWriteLine(opts.IsSilentRequest, "Completed.");
-                ConsoleWriteLine(opts.IsSilentRequest, "Thank you for cooperation.");
-                ConsoleWriteLine(opts.IsSilentRequest, "Please enter any key.");
-                ConsoleReadKey(opts.IsSilentRequest);
+                Display.WriteLine("Completed.");
+                Display.WriteLine("Thank you for cooperation.");
             }
+            Display.PauseReadKey();
         }
 
         private static void HandleParseError(IEnumerable<CommandLine.Error> errs)
         {
             // no action.
-        }
-
-        private static void ConsoleWriteLine(bool isSilentRequest, string line)
-        {
-            if (isSilentRequest)
-            {
-                return;
-            }
-            Console.WriteLine(line);
-        }
-
-        private static void ConsoleReadKey(bool isSilentRequest)
-        {
-            if (isSilentRequest)
-            {
-                return;
-            }
-            Console.ReadKey();
         }
     }
 }

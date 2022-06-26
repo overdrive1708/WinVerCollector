@@ -11,6 +11,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 CreateDatabase();
             }
 
@@ -37,6 +38,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 return;
             }
 
@@ -67,6 +69,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 return;
             }
 
@@ -78,13 +81,13 @@ namespace WinVerCollector
                     command.CommandText = "SELECT * FROM DeviceInfo";
                     using (var executeReader = command.ExecuteReader())
                     {
-                        Console.WriteLine("----------------------------------------------------------------------------------------------------");
-                        Console.WriteLine("\"HostName\",\"ProductName\",\"Version\",\"UserName\",\"LastUpdate\"");
+                        Display.WriteLine("----------------------------------------------------------------------------------------------------");
+                        Display.WriteLine("\"HostName\",\"ProductName\",\"Version\",\"UserName\",\"LastUpdate\"");
                         while (executeReader.Read())
                         {
-                            Console.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\"", executeReader["HostName"], executeReader["ProductName"], executeReader["Version"], executeReader["UserName"], executeReader["LastUpdate"]));
+                            Display.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\"", executeReader["HostName"], executeReader["ProductName"], executeReader["Version"], executeReader["UserName"], executeReader["LastUpdate"]));
                         }
-                        Console.WriteLine("----------------------------------------------------------------------------------------------------");
+                        Display.WriteLine("----------------------------------------------------------------------------------------------------");
                     }
                 }
                 connection.Close();
@@ -95,6 +98,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
+                Display.WriteErrorLine("Database file not found.");
                 return;
             }
 
@@ -123,6 +127,8 @@ namespace WinVerCollector
                     command.ExecuteNonQuery();
                 }
                 connection.Close();
+
+                Display.WriteLine("Create database file.");
             }
         }
     }
