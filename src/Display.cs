@@ -29,7 +29,7 @@ namespace WinVerCollector
         {
             if (!IsSilentRequest)
             {
-                Console.WriteLine("Please enter any key.");
+                Console.WriteLine(Properties.Resources.MessagePause);
                 _ = Console.ReadKey();
             }
         }
@@ -51,10 +51,10 @@ namespace WinVerCollector
             if (!IsSilentRequest)
             {
                 WriteLine("--------------------------------------------------");
-                WriteLine($"HostName:{DeviceInfo.GetHostName()}");
-                WriteLine($"ProductName:{DeviceInfo.GetProductName()}");
-                WriteLine($"Version:{DeviceInfo.GetVersion()}");
-                WriteLine($"UserName:{DeviceInfo.GetUserName()}");
+                WriteLine($"{Properties.Resources.StringHostName}:{DeviceInfo.GetHostName()}");
+                WriteLine($"{Properties.Resources.StringProductName}:{DeviceInfo.GetProductName()}");
+                WriteLine($"{Properties.Resources.StringVersion}:{DeviceInfo.GetVersion()}");
+                WriteLine($"{Properties.Resources.StringUserName}:{DeviceInfo.GetUserName()}");
                 WriteLine("--------------------------------------------------");
             }
         }

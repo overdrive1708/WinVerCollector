@@ -11,7 +11,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
-                Display.WriteErrorLine("Database file not found.");
+                Display.WriteErrorLine(Properties.Resources.ErrorMessageDatabaseNotFound);
                 CreateDatabase();
             }
 
@@ -38,7 +38,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
-                Display.WriteErrorLine("Database file not found.");
+                Display.WriteErrorLine(Properties.Resources.ErrorMessageDatabaseNotFound);
                 return;
             }
 
@@ -52,7 +52,7 @@ namespace WinVerCollector
                         command.CommandText = "SELECT * FROM DeviceInfo";
                         using (var executeReader = command.ExecuteReader())
                         {
-                            swCsv.WriteLine("\"HostName\",\"ProductName\",\"Version\",\"UserName\",\"LastUpdate\"");
+                            swCsv.WriteLine($"\"{Properties.Resources.StringHostName}\",\"{Properties.Resources.StringProductName}\",\"{Properties.Resources.StringVersion}\",\"{Properties.Resources.StringUserName}\",\"{Properties.Resources.StringLastUpdate}\"");
                             while (executeReader.Read())
                             {
                                 swCsv.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\"", executeReader["HostName"], executeReader["ProductName"], executeReader["Version"], executeReader["UserName"], executeReader["LastUpdate"]));
@@ -69,7 +69,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
-                Display.WriteErrorLine("Database file not found.");
+                Display.WriteErrorLine(Properties.Resources.ErrorMessageDatabaseNotFound);
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace WinVerCollector
                     using (var executeReader = command.ExecuteReader())
                     {
                         Display.WriteLine("----------------------------------------------------------------------------------------------------");
-                        Display.WriteLine("\"HostName\",\"ProductName\",\"Version\",\"UserName\",\"LastUpdate\"");
+                        Display.WriteLine($"\"{Properties.Resources.StringHostName}\",\"{Properties.Resources.StringProductName}\",\"{Properties.Resources.StringVersion}\",\"{Properties.Resources.StringUserName}\",\"{Properties.Resources.StringLastUpdate}\"");
                         while (executeReader.Read())
                         {
                             Display.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\"", executeReader["HostName"], executeReader["ProductName"], executeReader["Version"], executeReader["UserName"], executeReader["LastUpdate"]));
@@ -98,7 +98,7 @@ namespace WinVerCollector
         {
             if (!File.Exists(_databaseFileName))
             {
-                Display.WriteErrorLine("Database file not found.");
+                Display.WriteErrorLine(Properties.Resources.ErrorMessageDatabaseNotFound);
                 return;
             }
 
@@ -128,7 +128,7 @@ namespace WinVerCollector
                 }
                 connection.Close();
 
-                Display.WriteLine("Create database file.");
+                Display.WriteLine(Properties.Resources.MessageCreateDatabase);
             }
         }
     }

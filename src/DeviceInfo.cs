@@ -16,7 +16,7 @@ namespace WinVerCollector
 
         public static string GetProductName()
         {
-            string? productName = "Unknown";
+            string? productName = Properties.Resources.StringUnknown;
 
             ManagementClass mc = new ManagementClass("Win32_OperatingSystem");
             ManagementObjectCollection moc = mc.GetInstances();
@@ -47,12 +47,12 @@ namespace WinVerCollector
                 }
                 else
                 {
-                    version = "Unknown";
+                    version = Properties.Resources.StringUnknown;
                 }
             }
             else
             {
-                version = "Unknown";
+                version = Properties.Resources.StringUnknown;
             }
 
             return version;
@@ -75,7 +75,7 @@ namespace WinVerCollector
                 19042 => "20H2",
                 19043 => "21H1",
                 19044 => "21H2",
-                _ => $"Unknown(OS Build:{osBuildNum})"
+                _ => $"{Properties.Resources.StringUnknown}(OS Build:{osBuildNum})"
             };
 
             return version;
@@ -86,7 +86,7 @@ namespace WinVerCollector
             string version = osBuildNum switch
             {
                 22000 => "21H2",
-                _ => $"Unknown(OS Build:{osBuildNum})"
+                _ => $"{Properties.Resources.StringUnknown}(OS Build:{osBuildNum})"
             };
 
             return version;
