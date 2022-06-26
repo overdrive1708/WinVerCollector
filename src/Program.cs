@@ -25,7 +25,9 @@ namespace WinVerCollector
             }
             else if (opts.IsShowRequest)
             {
+                Display.WriteLine("Now outputting...");
                 Database.Show();
+                Display.WriteLine("Completed.");
             }
             else if (opts.IsCleanRequest)
             {
