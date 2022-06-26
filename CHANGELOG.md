@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-06-26
+
 ### Added
  - Display collected windows version info function.
  - Display windows version info function.
@@ -25,4 +27,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Initial version.
 
 [Unreleased]: https://github.com/overdrive1708/WinVerCollector
-[1.0.0]: https://github.com/overdrive1708/WinVerCollector/releases/tag/Ver.1.0.0
+[2.0.0]: https://github.com/overdrive1708/WinVerCollector/releases/tag/v2.0.0
+[1.0.0]: https://github.com/overdrive1708/WinVerCollector/releases/tag/v1.0.0
