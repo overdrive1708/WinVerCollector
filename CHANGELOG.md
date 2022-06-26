@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Changed the name of the silent mode option from "-s" to "-q".
  - Improved processing.
  - Display error messages.
+ - Changed of product name judge mechanism.
+ - Changed of version judge mechanism.
 
 ## [1.0.0] - 2022-06-12
 

@@ -41,6 +41,7 @@ Output "DeviceInfo.csv" file.
 ## Libraries used
 - CommandLineParser(Version.2.9.1)
 - System.Data.SQLite.Core(Version.1.0.116)
+- System.Management(Version.6.0.0)
 
 ## License
 This project is licensed under the MIT License.  

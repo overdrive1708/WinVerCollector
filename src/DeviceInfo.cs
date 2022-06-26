@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.Net;
+using System.Management;
 
 namespace WinVerCollector
 {
@@ -8,13 +9,24 @@ namespace WinVerCollector
         // Registry access configurations.
         private static readonly string _keyName = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
         private static readonly string _valueNameOsBuild = "CurrentBuild";
-        private static readonly string _valueNameOsProductName = "ProductName";
 
         public static string GetHostName() => Dns.GetHostName();
 
         public static string GetUserName() => @$"{Environment.UserDomainName}\{Environment.UserName}";
 
-        public static string? GetProductName() => Registry.GetValue(_keyName, _valueNameOsProductName, "")?.ToString();
+        public static string GetProductName()
+        {
+            string? productName = "Unknown";
+
+            ManagementClass mc = new ManagementClass("Win32_OperatingSystem");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
+            {
+                productName = mo["Caption"]?.ToString();
+            }
+
+            return productName;
+        }
 
         public static string GetVersion()
         {
@@ -25,28 +37,57 @@ namespace WinVerCollector
 
             if(int.TryParse(osBuildString, out int osBuildNum))
             {
-                version = osBuildNum switch
+                if (GetProductName().Contains("Windows 10"))
                 {
-                    10240 => "1507",
-                    10586 => "1511",
-                    14393 => "1607",
-                    15063 => "1703",
-                    16299 => "1709",
-                    17134 => "1803",
-                    17763 => "1809",
-                    18362 => "1903",
-                    18363 => "1909",
-                    19041 => "2004",
-                    19042 => "20H2",
-                    19043 => "21H1",
-                    19044 => "21H2",
-                    _ => $"Unknown(OS Build:{osBuildNum})"
-                };
+                    version = ConvertWin10BuildToVersion(osBuildNum);
+                }
+                else if (GetProductName().Contains("Windows 11"))
+                {
+                    version = ConvertWin11BuildToVersion(osBuildNum);
+                }
+                else
+                {
+                    version = "Unknown";
+                }
             }
             else
             {
                 version = "Unknown";
             }
+
+            return version;
+        }
+
+        private static string ConvertWin10BuildToVersion(int osBuildNum)
+        {
+            string version = osBuildNum switch
+            {
+                10240 => "1507",
+                10586 => "1511",
+                14393 => "1607",
+                15063 => "1703",
+                16299 => "1709",
+                17134 => "1803",
+                17763 => "1809",
+                18362 => "1903",
+                18363 => "1909",
+                19041 => "2004",
+                19042 => "20H2",
+                19043 => "21H1",
+                19044 => "21H2",
+                _ => $"Unknown(OS Build:{osBuildNum})"
+            };
+
+            return version;
+        }
+
+        private static string ConvertWin11BuildToVersion(int osBuildNum)
+        {
+            string version = osBuildNum switch
+            {
+                22000 => "21H2",
+                _ => $"Unknown(OS Build:{osBuildNum})"
+            };
 
             return version;
         }
