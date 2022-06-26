@@ -19,32 +19,32 @@ namespace WinVerCollector
 
             if (opts.IsOutputRequest)
             {
-                Display.WriteLine("Now outputting...");
+                Display.WriteLine(Properties.Resources.MessageNowOutputting);
                 Database.Output();
-                Display.WriteLine("Completed.");
+                Display.WriteLine(Properties.Resources.MessageComplete);
             }
             else if (opts.IsShowRequest)
             {
-                Display.WriteLine("Now outputting...");
+                Display.WriteLine(Properties.Resources.MessageNowOutputting);
                 Database.Show();
-                Display.WriteLine("Completed.");
+                Display.WriteLine(Properties.Resources.MessageComplete);
             }
             else if (opts.IsCleanRequest)
             {
-                Display.WriteLine("Now cleaning...");
+                Display.WriteLine(Properties.Resources.MessageNowCleaning);
                 Database.Clean();
-                Display.WriteLine("Completed.");
+                Display.WriteLine(Properties.Resources.MessageComplete);
             }
             else
             {
-                Display.WriteLine("Now collecting...");
+                Display.WriteLine(Properties.Resources.MessageNowCollecting);
                 Database.Collect();
                 if (opts.IsVerboseRequest)
                 {
                     Display.ShowDeviceInfo();
                 }
-                Display.WriteLine("Completed.");
-                Display.WriteLine("Thank you for cooperation.");
+                Display.WriteLine(Properties.Resources.MessageComplete);
+                Display.WriteLine(Properties.Resources.MessageThanks);
             }
             Display.PauseReadKey();
         }
