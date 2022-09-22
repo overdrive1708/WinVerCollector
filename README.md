@@ -45,6 +45,9 @@ Output "DeviceInfo.csv" file.
 - System.Data.SQLite.Core(Version.1.0.116)
 - System.Management(Version.6.0.0)
 
+## Bug report & Feature request
+Please report it via Issue on GitHub.
+
 ## License
 This project is licensed under the MIT License.  
 See [LICENSE](LICENSE) for details.

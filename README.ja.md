@@ -50,6 +50,9 @@ WinVerCollector.exe -o
 このプロジェクトはMITライセンスです。  
 詳細は [LICENSE](LICENSE) を参照してください。
 
+## 不具合報告と機能要望
+GitHubのIssueより報告してください｡
+
 ## 作者
 [overdrive1708](https://github.com/overdrive1708)
 
