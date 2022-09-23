@@ -1,8 +1,24 @@
 [English](README.md) | [日本語](README.ja.md)
 
-# WinVerCollector
+<h1 align="center">
+    WinVerCollector
+</h1>
 
-Collect windows version.
+<h2 align="center">
+    Collect windows version.
+</h2>
+
+<div align="center">
+    <img alt="csharp" src="https://img.shields.io/badge/csharp-blue.svg?style=plastic&logo=csharp">
+    <img alt="dotnet" src="https://img.shields.io/badge/.NET-blue.svg?style=plastic&logo=dotnet">
+    <img alt="license" src="https://img.shields.io/github/license/overdrive1708/WinVerCollector?style=plastic">
+    <br>
+    <img alt="repo size" src="https://img.shields.io/github/repo-size/overdrive1708/WinVerCollector?style=plastic&logo=github">
+    <img alt="release" src="https://img.shields.io/github/release/overdrive1708/WinVerCollector?style=plastic&logo=github">
+    <img alt="download" src="https://img.shields.io/github/downloads/overdrive1708/WinVerCollector/total?style=plastic&logo=github&color=brightgreen">
+    <img alt="open issues" src="https://img.shields.io/github/issues-raw/overdrive1708/WinVerCollector?style=plastic&logo=github&color=brightgreen">
+    <img alt="closed issues" src="https://img.shields.io/github/issues-closed-raw/overdrive1708/WinVerCollector?style=plastic&logo=github&color=brightgreen">
+</div>
 
 ## Usage
 ```
@@ -34,7 +50,7 @@ WinVerCollector.exe -o
 Output "DeviceInfo.csv" file.
 
 ## Requirements
-- [.NET Runtime 6.0.5](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET Runtime 6.x.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ## Development environment
 - Microsoft Visual Studio Community 2022
@@ -46,7 +62,7 @@ Output "DeviceInfo.csv" file.
 - System.Management(Version.6.0.0)
 
 ## Bug report & Feature request
-Please report it via Issue on GitHub.
+Please report it via [Issue on GitHub](https://github.com/overdrive1708/WinVerCollector/issues/new/choose).
 
 ## License
 This project is licensed under the MIT License.  
