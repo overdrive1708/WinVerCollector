@@ -64,6 +64,7 @@ Output "DeviceInfo.csv" file.
   - Version 20H2
   - Version 21H1
   - Version 21H2
+  - Version 22H2
 - Windows11
   - Version 21H2
   - Version 22H2

@@ -75,6 +75,7 @@ namespace WinVerCollector
                 19042 => "20H2",
                 19043 => "21H1",
                 19044 => "21H2",
+                19045 => "22H2",
                 _ => $"{Properties.Resources.StringUnknown}(OS Build:{osBuildNum})"
             };
 
