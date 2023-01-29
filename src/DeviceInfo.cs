@@ -86,6 +86,7 @@ namespace WinVerCollector
             string version = osBuildNum switch
             {
                 22000 => "21H2",
+                22621 => "22H2",
                 _ => $"{Properties.Resources.StringUnknown}(OS Build:{osBuildNum})"
             };
 
