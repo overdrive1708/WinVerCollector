@@ -58,9 +58,11 @@ WinVerCollector.exe -o
 - .NET 6.0.300
 
 ## 使用しているライブラリ
-- CommandLineParser(Version.2.9.1)
-- System.Data.SQLite.Core(Version.1.0.116)
-- System.Management(Version.6.0.0)
+- CommandLineParser
+- System.Data.SQLite.Core
+- System.Management
+
+バージョンは"WinVerCollector.csproj"を参照してください｡
 
 ## ライセンス
 このプロジェクトはMITライセンスです。  

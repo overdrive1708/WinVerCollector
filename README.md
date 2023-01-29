@@ -57,9 +57,11 @@ Output "DeviceInfo.csv" file.
 - .NET 6.0.300
 
 ## Libraries used
-- CommandLineParser(Version.2.9.1)
-- System.Data.SQLite.Core(Version.1.0.116)
-- System.Management(Version.6.0.0)
+- CommandLineParser
+- System.Data.SQLite.Core
+- System.Management
+
+Refer to "WinVerCollector.csproj" for version.
 
 ## Bug report & Feature request
 Please report it via [Issue on GitHub](https://github.com/overdrive1708/WinVerCollector/issues/new/choose).
