@@ -66,6 +66,7 @@ Output "DeviceInfo.csv" file.
   - Version 21H2
 - Windows11
   - Version 21H2
+  - Version 22H2
 
 ## Requirements
 - [.NET Runtime 6.x.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
