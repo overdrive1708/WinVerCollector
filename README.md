@@ -49,6 +49,24 @@ WinVerCollector.exe -o
 ```
 Output "DeviceInfo.csv" file.
 
+## Supported OS Versions
+- Windows10
+  - Version 1507
+  - Version 1511
+  - Version 1607
+  - Version 1703
+  - Version 1709
+  - Version 1803
+  - Version 1809
+  - Version 1903
+  - Version 1909
+  - Version 2004
+  - Version 20H2
+  - Version 21H1
+  - Version 21H2
+- Windows11
+  - Version 21H2
+
 ## Requirements
 - [.NET Runtime 6.x.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
